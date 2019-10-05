@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 892256129}
   - component: {fileID: 892256128}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Crafter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -590,11 +590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b796e32c6b07e74fab8741119962e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputs:
-  - {fileID: 11400000, guid: 6eb2c70948b2fa042bfc83c40ae4fabd, type: 2}
-  - {fileID: 11400000, guid: 6eb2c70948b2fa042bfc83c40ae4fabd, type: 2}
-  - {fileID: 11400000, guid: 6eb2c70948b2fa042bfc83c40ae4fabd, type: 2}
-  - {fileID: 11400000, guid: 6eb2c70948b2fa042bfc83c40ae4fabd, type: 2}
 --- !u!4 &892256129
 Transform:
   m_ObjectHideFlags: 0
@@ -950,7 +945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1436397048}
   text: {fileID: 884182918}
-  item: {fileID: 11400000, guid: 958fd57f7a7046946ad43cc8e18f5ee3, type: 2}
+  crafter: {fileID: 892256128}
+  item: {fileID: 11400000, guid: 6eb2c70948b2fa042bfc83c40ae4fabd, type: 2}
 --- !u!1 &1989331584
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,15 +4,19 @@ using UnityEngine.UI;
 internal class Chara : MonoBehaviour {
   
   [SerializeField]
+  private Item item;
+  
+  [Header("Components")]
+  
+  [SerializeField]
   private Image image;
   [SerializeField]
   private Text text;
-  
   [SerializeField]
-  private Item item;
+  private Crafter crafter;
   
   public void OnClick() {
-    Debug.Log("oenthusnatoe");
+    crafter.AddInput(item);
   }
   
   private void Start() {
