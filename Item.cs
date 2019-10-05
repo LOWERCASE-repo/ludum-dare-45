@@ -5,6 +5,6 @@ using System.Collections.Generic;
 internal class Item : ScriptableObject {
   
   public Sprite icon;
-  public HashSet<Item> test;
-  public string discoveryText;
+  public string flavour;
+  
 }
