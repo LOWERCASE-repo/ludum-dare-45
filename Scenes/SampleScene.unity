@@ -628,7 +628,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -648,7 +648,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 335579917}
   m_OnClick:
     m_PersistentCalls:
@@ -1166,6 +1166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b796e32c6b07e74fab8741119962e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  images:
+  - {fileID: 654102868}
+  - {fileID: 96397359}
+  - {fileID: 1232036178}
+  - {fileID: 1423152631}
   chara: {fileID: 1574908832303527868, guid: 954fb6858eb57ad4ebd75062d969595a, type: 3}
   inventory: {fileID: 697957770}
 --- !u!4 &892256129

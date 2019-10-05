@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [CreateAssetMenu]
 internal class Item : ScriptableObject {
   
-  public Sprite icon;
+  public Sprite sprite;
   public string flavour;
   
 }

@@ -18,7 +18,7 @@ internal class Chara : MonoBehaviour {
   }
   
   private void Start() {
-    image.sprite = item.icon;
+    image.sprite = item.sprite;
     // text.text = item.name;
   }
 }

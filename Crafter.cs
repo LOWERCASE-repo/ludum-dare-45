@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
 
 internal class Crafter : MonoBehaviour {
   
-  private List<Item> inputs; // cant hashset, dupes
-  // TODO switch to array, removal
-  private Recipe[] recipes;
+  private Item[] inputs; // cant hashset, dupes
+  [SerializeField]
+  private Image[] images;
+  private List<Recipe> recipes;
   
   [SerializeField]
   private Chara chara;
@@ -16,6 +18,7 @@ internal class Crafter : MonoBehaviour {
   private bool CompareContents<T>(IEnumerable<T> list1, IEnumerable<T> list2) {
     var dict = new Dictionary<T, int>();
     foreach (T item in list1) {
+      if (item == null) continue;
       if (dict.ContainsKey(item)) {
         dict[item]++;
       } else {
@@ -23,6 +26,7 @@ internal class Crafter : MonoBehaviour {
       }
     }
     foreach (T item in list2) {
+      if (item == null) continue;
       if (dict.ContainsKey(item)) {
         dict[item]--;
       } else {
@@ -32,35 +36,57 @@ internal class Crafter : MonoBehaviour {
     return dict.Values.All(count => count == 0);
   }
   
-  internal Item Craft(IEnumerable<Item> inputs) {
-    foreach (Recipe recipe in recipes) {
-      if (CompareContents(inputs, recipe.inputs)) {
-        return recipe.result;
+  private void UpdateTable() {
+    for (int i = 0; i < 4; i++) {
+      if (inputs[i] != null) {
+        images[i].sprite = inputs[i].sprite;
+        // animators[i].SetTrigger
+        // TODO aseprite hollow squares, image anims
       }
     }
-    return null;
+  }
+  
+  internal Item Craft(IEnumerable<Item> inputs) {
+    Item result = null;
+    for (int i = 0; i < recipes.Count; i++) {
+      if (CompareContents(inputs, recipes[i].inputs)) {
+        result = recipes[i].result;
+      }
+    }
+    for (int i = recipes.Count - 1; i >= 0; i--) {
+      if (result == recipes[i].result) {
+        recipes.RemoveAt(i);
+      }
+    }
+    return result;
   }
   
   internal void AddInput(Item item) {
-    if (inputs.Count < 4) {
-      inputs.Add(item);
+    for (int i = 0; i < 4; i++) {
+      if (inputs[i] == null) {
+        inputs[i] = item;
+        break;
+      }
     }
+    UpdateTable();
     Item result = Craft(inputs);
-    if (result != null) {
+    if (result != null) { // if not null and not exist
       Chara chara = Instantiate(this.chara, inventory);
       chara.item = result;
       chara.crafter = this;
-      inputs.Clear();
+      for (int i = 0; i < 4; i++) {
+        RemoveInput(i);
+      }
     }
   }
   
-  internal void RemoveInput(Item item) {
-    inputs.Remove(item);
+  internal void RemoveInput(int index) {
+    inputs[index] = null;
+    UpdateTable();
   }
   
   private void Start() {
-    inputs = new List<Item>();
-    recipes = Resources.LoadAll("Recipes").Cast<Recipe>().ToArray();
-    Debug.Log(Craft(inputs));
+    inputs = new Item[4];
+    recipes = Resources.LoadAll("Recipes").Cast<Recipe>().ToList();
   }
 }
