@@ -5,7 +5,13 @@ using System.Linq;
 internal class Crafter : MonoBehaviour {
   
   private List<Item> inputs; // cant hashset, dupes
+  // TODO switch to array, removal
   private Recipe[] recipes;
+  
+  [SerializeField]
+  private Chara chara;
+  [SerializeField]
+  private Transform inventory;
   
   private bool CompareContents<T>(IEnumerable<T> list1, IEnumerable<T> list2) {
     var dict = new Dictionary<T, int>();
@@ -40,7 +46,12 @@ internal class Crafter : MonoBehaviour {
       inputs.Add(item);
     }
     Item result = Craft(inputs);
-    if (result != null) Debug.Log(result);
+    if (result != null) {
+      Chara chara = Instantiate(this.chara, inventory);
+      chara.item = result;
+      chara.crafter = this;
+      inputs.Clear();
+    }
   }
   
   internal void RemoveInput(Item item) {
