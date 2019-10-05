@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
   m_Name: Goth
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: ea1dfadd8e2674440983c840e6f25e25, type: 3}
+  icon: {fileID: 21300000, guid: 425bd126bafd9f04c9f077b9d47875eb, type: 3}
   flavour: 
