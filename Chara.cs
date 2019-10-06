@@ -1,14 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-internal class Chara : Slot {
+internal class Chara : Icon {
   
-  public override void OnClick() {
+  public void OnClick() {
     crafter.AddInput(item);
   }
   
   private void Start() {
-    UpdateIcon();
+    SetItem(item);
   }
 }

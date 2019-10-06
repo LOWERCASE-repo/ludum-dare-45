@@ -1,30 +1,20 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 
 internal class Crafter : MonoBehaviour {
   
-  // TODO move to new table class
-  private Item[] inputs; // cant hashset, dupes
   [SerializeField]
   private Slot[] slots;
   [SerializeField]
-  private Animator[] animators;
-  [SerializeField]
-  private Animator resultAnimator;
-  [SerializeField]
-  private Image resultImage;
-  [SerializeField]
-  private TextMeshProUGUI resultText;
-  private List<Recipe> recipes;
-  
-  [SerializeField]
-  private Chara chara;
+  private Result result;
   [SerializeField]
   private Transform inventory;
+  [SerializeField]
+  private Chara chara;
+  
+  private List<Recipe> recipes;
   
   private bool CompareContents<T>(IEnumerable<T> list1, IEnumerable<T> list2) {
     var dict = new Dictionary<T, int>();
@@ -47,16 +37,6 @@ internal class Crafter : MonoBehaviour {
     return dict.Values.All(count => count == 0);
   }
   
-  private void UpdateTable(int index) {
-    if (inputs[index] != null) {
-      slots[index].item = inputs[index];
-      slots[index].UpdateIcon();
-      animators[index].SetBool("Active", true);
-    } else {
-      animators[index].SetBool("Active", false);
-    }
-  }
-  
   internal Item Craft(IEnumerable<Item> inputs) {
     Item result = null;
     for (int i = 0; i < recipes.Count; i++) {
@@ -74,47 +54,34 @@ internal class Crafter : MonoBehaviour {
   
   internal void AddInput(Item item) {
     for (int i = 0; i < 4; i++) {
-      if (inputs[i] == null) {
-        inputs[i] = item;
-        UpdateTable(i);
+      if (slots[i].item == null) {
+        slots[i].SetItem(item);
+        Item[] inputs = new Item[] {
+          slots[0].item, slots[1].item, slots[2].item, slots[3].item
+        };
+        Item result = Craft(inputs);
+        if (result != null) { // if not null and not exist
+          StartCoroutine(DelayCollect(result));
+        }
         break;
       }
     }
-    Item result = Craft(inputs);
-    if (result != null) { // if not null and not exist
-      StartCoroutine(DelayCollect(result));
-    }
   }
   
+  // turn into event
   private IEnumerator DelayCollect(Item item) {
     yield return new WaitForSeconds(1f/3f);
-    resultImage.sprite = item.sprite;
-    resultText.text = item.name;
-    resultAnimator.SetTrigger("Discover");
+    result.SetItem(item);
     yield return new WaitForSeconds(1.5f);
-    Collect(item);
-    Clear();
-  }
-  
-  internal void RemoveInput(int index) {
-    inputs[index] = null;
-    UpdateTable(index);
-  }
-  
-  internal void Clear() {
-    for (int i = 0; i < 4; i++) {
-      RemoveInput(i);
-    }
-  }
-  
-  internal void Collect(Item item) {
     Chara chara = Instantiate(this.chara, inventory);
     chara.item = item;
     chara.crafter = this;
+    for (int i = 0; i < 4; i++) {
+      slots[i].OnClick();
+    }
   }
   
   private void Start() {
-    inputs = new Item[4];
     recipes = Resources.LoadAll("Recipes").Cast<Recipe>().ToList();
   }
 }

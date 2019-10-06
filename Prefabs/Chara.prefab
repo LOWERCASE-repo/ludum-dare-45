@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   crafter: {fileID: 0}
+  animator: {fileID: 6090069367930887486}
   image: {fileID: 1121956867249866186}
   text: {fileID: 7131358390065951959}
 --- !u!222 &3868497282527620166
