@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
-  m_Name: LARPer
+  m_Name: Cosplayer
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   flavour: 

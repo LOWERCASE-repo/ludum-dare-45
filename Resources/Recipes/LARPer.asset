@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
+  m_Script: {fileID: 11500000, guid: b4042bdffaf8d5b4a84338385924b1dc, type: 3}
   m_Name: LARPer
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  flavour: 
+  inputs:
+  - {fileID: 11400000, guid: 70df7c53a0d46a945a97e905a8c5ca3c, type: 2}
+  - {fileID: 11400000, guid: 99970138e08a3694996987dcf8679df3, type: 2}
+  result: {fileID: 11400000, guid: 2f88cb10bf74b17449fbc93faeef0aac, type: 2}
