@@ -337,7 +337,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 560, y: 720}
+  m_SizeDelta: {x: 540, y: 720}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &180686157
 MonoBehaviour:
@@ -1074,7 +1074,7 @@ RectTransform:
   m_GameObject: {fileID: 509757304}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.93, y: 0.93, z: 1}
   m_Children: []
   m_Father: {fileID: 335579915}
   m_RootOrder: 1
@@ -1097,12 +1097,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8287eca2d52527344af1740e56e33ef9, type: 3}
+  m_Texture: {fileID: 2800000, guid: 69a1e291d8f43ca4794669f3013271fb, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1153,7 +1153,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BackGroundColor: {r: 0.4056604, g: 0.2708525, b: 0.19708973, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1396,15 +1396,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 41
-    m_Right: 41
-    m_Top: 41
-    m_Bottom: 41
+    m_Left: 36
+    m_Right: 36
+    m_Top: 36
+    m_Bottom: 36
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 132, y: 132}
-  m_Spacing: {x: 41, y: 41}
+  m_Spacing: {x: 36, y: 36}
   m_Constraint: 0
   m_ConstraintCount: 3
 --- !u!114 &697957772
@@ -2639,7 +2639,7 @@ PrefabInstance:
     - target: {fileID: 7237374161714111430, guid: 342263435273cec4d89f9dbdc389d857,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 189.99988
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 7237374161714111430, guid: 342263435273cec4d89f9dbdc389d857,
         type: 3}

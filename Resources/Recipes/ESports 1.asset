@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4042bdffaf8d5b4a84338385924b1dc, type: 3}
-  m_Name: Depression
+  m_Name: ESports 1
   m_EditorClassIdentifier: 
   inputs:
-  - {fileID: 11400000, guid: d3a7cda2f15d2124990f58495e6a94e0, type: 2}
-  - {fileID: 11400000, guid: 6eb2c70948b2fa042bfc83c40ae4fabd, type: 2}
-  result: {fileID: 11400000, guid: 3c77693171e75f645876e5518e6decef, type: 2}
+  - {fileID: 11400000, guid: 99970138e08a3694996987dcf8679df3, type: 2}
+  - {fileID: 11400000, guid: 99970138e08a3694996987dcf8679df3, type: 2}
+  - {fileID: 11400000, guid: 70df7c53a0d46a945a97e905a8c5ca3c, type: 2}
+  - {fileID: 11400000, guid: 70df7c53a0d46a945a97e905a8c5ca3c, type: 2}
+  result: {fileID: 11400000, guid: 95b8da89424ce8945a59d9670647df9d, type: 2}
