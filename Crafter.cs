@@ -9,7 +9,7 @@ internal class Crafter : MonoBehaviour {
   // TODO move to new table class
   private Item[] inputs; // cant hashset, dupes
   [SerializeField]
-  private Image[] images;
+  private Slot[] slots;
   [SerializeField]
   private Animator[] animators;
   [SerializeField]
@@ -46,7 +46,8 @@ internal class Crafter : MonoBehaviour {
   
   private void UpdateTable(int index) {
     if (inputs[index] != null) {
-      images[index].sprite = inputs[index].sprite;
+      slots[index].item = inputs[index];
+      slots[index].UpdateIcon();
       animators[index].SetBool("Active", true);
     } else {
       animators[index].SetBool("Active", false);

@@ -1,24 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-internal class Chara : MonoBehaviour {
+internal class Chara : Slot {
   
-  [SerializeField]
-  internal Item item;
-  
-  [Header("Components")]
-  
-  [SerializeField]
-  private Image image;
-  [SerializeField]
-  internal Crafter crafter;
-  
-  public void OnClick() {
+  public override void OnClick() {
     crafter.AddInput(item);
   }
   
   private void Start() {
-    image.sprite = item.sprite;
-    // text.text = item.name;
+    UpdateIcon();
   }
 }

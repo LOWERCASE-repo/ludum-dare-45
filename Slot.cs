@@ -1,12 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 internal class Slot : MonoBehaviour {
   
   [SerializeField]
-  private Crafter crafter;
+  internal Item item;
+  [Header("Components")]
+  [SerializeField]
+  internal Crafter crafter;
+  [SerializeField]
+  private Image image;
+  [SerializeField]
+  private TextMeshProUGUI text;
   
-  public void OnClick() {
+  public virtual void OnClick() {
     crafter.RemoveInput(gameObject.name[gameObject.name.Length - 1] - 49);
+  }
+  
+  internal void UpdateIcon() {
+    image.sprite = item.sprite;
+    text.text = item.name;
   }
 }
