@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,6 +12,10 @@ internal class Crafter : MonoBehaviour {
   private Image[] images;
   [SerializeField]
   private Animator[] animators;
+  [SerializeField]
+  private Animator resultAnimator;
+  [SerializeField]
+  private Image resultImage;
   private List<Recipe> recipes;
   
   [SerializeField]
@@ -73,18 +78,33 @@ internal class Crafter : MonoBehaviour {
     }
     Item result = Craft(inputs);
     if (result != null) { // if not null and not exist
-      Chara chara = Instantiate(this.chara, inventory);
-      chara.item = result;
-      chara.crafter = this;
-      for (int i = 0; i < 4; i++) {
-        RemoveInput(i);
-      }
+      resultImage.sprite = result.sprite;
+      resultAnimator.SetTrigger("Discover");
+      StartCoroutine(DelayCollect(result));
     }
+  }
+  
+  private IEnumerator DelayCollect(Item item) {
+    yield return new WaitForSeconds(1.5f);
+    Collect(item);
+    Clear();
   }
   
   internal void RemoveInput(int index) {
     inputs[index] = null;
     UpdateTable(index);
+  }
+  
+  internal void Clear() {
+    for (int i = 0; i < 4; i++) {
+      RemoveInput(i);
+    }
+  }
+  
+  internal void Collect(Item item) {
+    Chara chara = Instantiate(this.chara, inventory);
+    chara.item = item;
+    chara.crafter = this;
   }
   
   private void Start() {

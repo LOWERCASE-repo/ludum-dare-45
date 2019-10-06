@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
   m_Name: Nerd
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  discoveryText: 
+  sprite: {fileID: 21300000, guid: d65bcb88b983fe94eba6f3dd142b59a0, type: 3}
+  flavour: 
