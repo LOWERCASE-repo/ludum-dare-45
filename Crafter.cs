@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 internal class Crafter : MonoBehaviour {
   
@@ -16,6 +17,8 @@ internal class Crafter : MonoBehaviour {
   private Animator resultAnimator;
   [SerializeField]
   private Image resultImage;
+  [SerializeField]
+  private TextMeshProUGUI resultText;
   private List<Recipe> recipes;
   
   [SerializeField]
@@ -79,13 +82,15 @@ internal class Crafter : MonoBehaviour {
     }
     Item result = Craft(inputs);
     if (result != null) { // if not null and not exist
-      resultImage.sprite = result.sprite;
-      resultAnimator.SetTrigger("Discover");
       StartCoroutine(DelayCollect(result));
     }
   }
   
   private IEnumerator DelayCollect(Item item) {
+    yield return new WaitForSeconds(1f/3f);
+    resultImage.sprite = item.sprite;
+    resultText.text = item.name;
+    resultAnimator.SetTrigger("Discover");
     yield return new WaitForSeconds(1.5f);
     Collect(item);
     Clear();
