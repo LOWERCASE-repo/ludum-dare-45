@@ -20,6 +20,6 @@ internal class Icon : MonoBehaviour {
   internal virtual void SetItem(Item item) {
     this.item = item;
     image.sprite = item.sprite;
-    text.text = item.name;
+    text.text = item.name.ToUpper();
   }
 }

@@ -273,6 +273,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954fb6858eb57ad4ebd75062d969595a, type: 3}
 --- !u!1 &180686155
@@ -829,6 +854,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954fb6858eb57ad4ebd75062d969595a, type: 3}
 --- !u!1001 &481124700
@@ -1189,7 +1239,7 @@ MonoBehaviour:
   item: {fileID: 0}
   crafter: {fileID: 892256128}
   animator: {fileID: 561471606}
-  image: {fileID: 561471604}
+  image: {fileID: 335579917}
   text: {fileID: 1795040013}
 --- !u!224 &654102866 stripped
 RectTransform:
@@ -1351,7 +1401,7 @@ MonoBehaviour:
   - {fileID: 691967700}
   - {fileID: 999949046}
   - {fileID: 850972486}
-  result: {fileID: 0}
+  result: {fileID: 561471607}
   inventory: {fileID: 697957770}
   chara: {fileID: 1574908832303527868, guid: 954fb6858eb57ad4ebd75062d969595a, type: 3}
 --- !u!4 &892256129
@@ -1698,6 +1748,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156934687648060179, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954fb6858eb57ad4ebd75062d969595a, type: 3}
 --- !u!1 &1253237327
@@ -1814,7 +1889,7 @@ GameObject:
   - component: {fileID: 1795040014}
   - component: {fileID: 1795040013}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1836,8 +1911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1795040013
 MonoBehaviour:
@@ -1859,8 +1934,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f471db8050f3114e9f775dbd614c559, type: 2}
-  m_sharedMaterial: {fileID: 6201137163368470745, guid: 2f471db8050f3114e9f775dbd614c559,
+  m_fontAsset: {fileID: 11400000, guid: ea5c582618796434fafd81b0730b28e1, type: 2}
+  m_sharedMaterial: {fileID: -1156232304114500987, guid: ea5c582618796434fafd81b0730b28e1,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1886,14 +1961,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 1026
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1903,7 +1978,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
