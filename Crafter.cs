@@ -5,9 +5,12 @@ using System.Linq;
 
 internal class Crafter : MonoBehaviour {
   
+  // TODO move to new table class
   private Item[] inputs; // cant hashset, dupes
   [SerializeField]
   private Image[] images;
+  [SerializeField]
+  private Animator[] animators;
   private List<Recipe> recipes;
   
   [SerializeField]
@@ -36,13 +39,12 @@ internal class Crafter : MonoBehaviour {
     return dict.Values.All(count => count == 0);
   }
   
-  private void UpdateTable() {
-    for (int i = 0; i < 4; i++) {
-      if (inputs[i] != null) {
-        images[i].sprite = inputs[i].sprite;
-        // animators[i].SetTrigger
-        // TODO aseprite hollow squares, image anims
-      }
+  private void UpdateTable(int index) {
+    if (inputs[index] != null) {
+      images[index].sprite = inputs[index].sprite;
+      animators[index].SetBool("Active", true);
+    } else {
+      animators[index].SetBool("Active", false);
     }
   }
   
@@ -65,10 +67,10 @@ internal class Crafter : MonoBehaviour {
     for (int i = 0; i < 4; i++) {
       if (inputs[i] == null) {
         inputs[i] = item;
+        UpdateTable(i);
         break;
       }
     }
-    UpdateTable();
     Item result = Craft(inputs);
     if (result != null) { // if not null and not exist
       Chara chara = Instantiate(this.chara, inventory);
@@ -82,7 +84,7 @@ internal class Crafter : MonoBehaviour {
   
   internal void RemoveInput(int index) {
     inputs[index] = null;
-    UpdateTable();
+    UpdateTable(index);
   }
   
   private void Start() {
