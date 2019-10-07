@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4042bdffaf8d5b4a84338385924b1dc, type: 3}
-  m_Name: Business Major
+  m_Name: Biz Major
   m_EditorClassIdentifier: 
   inputs:
   - {fileID: 11400000, guid: a3dbb14fb1a88fd4b969b17bf383e4f4, type: 2}

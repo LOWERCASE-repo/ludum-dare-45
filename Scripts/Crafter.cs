@@ -64,7 +64,7 @@ internal class Crafter : MonoBehaviour {
     
     // remove dupe recipes
     for (int i = recipes.Count - 1; i >= 0; i--) {
-      if (result == recipes[i]) {
+      if (result.result == recipes[i].result) {
         recipes.RemoveAt(i);
       }
     }
@@ -94,8 +94,11 @@ internal class Crafter : MonoBehaviour {
         }
       }
     }
-    if (resultCompleted) StartCoroutine(DelayCollectCompleted(result.result));
-    else StartCoroutine(DelayCollect(result.result));
+    if (resultCompleted) {
+      StartCoroutine(DelayCollectCompleted(result.result));
+    } else {
+      StartCoroutine(DelayCollect(result.result));
+    }
   }
   
   internal void AddInput(Item item) {
@@ -119,7 +122,7 @@ internal class Crafter : MonoBehaviour {
     chara.crafter = this;
     itemButtons.Add(item, chara);
     for (int i = 0; i < 4; i++) {
-      slots[i].OnClick();
+      slots[i].Clear();
     }
     eventSystem.SetActive(true);
   }
@@ -135,7 +138,7 @@ internal class Crafter : MonoBehaviour {
     itemButtons.Add(item, chara);
     chara.Complete();
     for (int i = 0; i < 4; i++) {
-      slots[i].OnClick();
+      slots[i].Clear();
     }
     eventSystem.SetActive(true);
   }

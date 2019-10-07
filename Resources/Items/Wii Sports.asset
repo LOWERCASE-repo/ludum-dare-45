@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
-  m_Name: Drama Kid
+  m_Name: Wii Sports
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 3b08e25a5585e62418330c7e44ff9eb5, type: 3}
+  sprite: {fileID: 21300000, guid: e1b694e76ccee45499f34157bfc27720, type: 3}
   flavour: 

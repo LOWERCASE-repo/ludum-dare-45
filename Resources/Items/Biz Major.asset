@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
-  m_Name: Business Major
+  m_Name: Biz Major
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ad46a2fc24ba49140af1a19db13414bb, type: 3}
   flavour: 
