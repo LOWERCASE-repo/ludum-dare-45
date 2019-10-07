@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
   m_Name: Sexy Rivals
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 15122f5adaf27a24e8af07c150760785, type: 3}
   flavour: 

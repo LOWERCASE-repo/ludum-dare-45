@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 internal class TutorialText : MonoBehaviour {
   
@@ -6,6 +7,14 @@ internal class TutorialText : MonoBehaviour {
   private Animator animator;
   
   internal void Fade() {
-    animator.SetTrigger("Fade");
+    if (animator != null) {
+      animator.SetTrigger("Fade");
+      StartCoroutine(death());
+    }
+  }
+  
+  private IEnumerator death() {
+    yield return new WaitForSecondsRealtime(1f);
+    gameObject.SetActive(false);
   }
 }

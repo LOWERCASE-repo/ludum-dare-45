@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 internal class GoldPopup : MonoBehaviour {
   
@@ -11,5 +12,11 @@ internal class GoldPopup : MonoBehaviour {
   
   public void Fade() {
     animator.SetTrigger("Fade");
+    StartCoroutine(Existnt());
+  }
+  
+  private IEnumerator Existnt() {
+    yield return new WaitForSecondsRealtime(1f);
+    gameObject.SetActive(false);
   }
 }

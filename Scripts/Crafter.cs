@@ -29,6 +29,10 @@ internal class Crafter : MonoBehaviour {
   [SerializeField]
   private GoldPopup gold;
   private bool golded;
+  private bool tutted;
+  
+  [SerializeField]
+  private Animator windex;
   
   private bool CompareContents<T>(IEnumerable<T> list1, IEnumerable<T> list2) {
     var dict = new Dictionary<T, int>();
@@ -68,7 +72,10 @@ internal class Crafter : MonoBehaviour {
     
     if (result == null) return;
     
-    tutText.Fade();
+    if (!tutted) {
+      tutText.Fade();
+      tutted = true;
+    }
     // remove dupe recipes
     for (int i = recipes.Count - 1; i >= 0; i--) {
       if (result.result == recipes[i].result) {
@@ -138,6 +145,7 @@ internal class Crafter : MonoBehaviour {
       slots[i].Clear();
     }
     eventSystem.SetActive(true);
+    yield return new WaitForSeconds(0.5f);
     CheckWin();
   }
   
@@ -159,11 +167,14 @@ internal class Crafter : MonoBehaviour {
       gold.Activate();
     }
     golded = true;
+    yield return new WaitForSeconds(0.5f);
     CheckWin();
   }
   
   private void CheckWin() {
-    Debug.Log(recipes.Count);
+    if (recipes.Count == 0) {
+      windex.SetTrigger("yes");
+    }
   }
   
   
