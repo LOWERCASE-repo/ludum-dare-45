@@ -70,6 +70,7 @@ internal class Crafter : MonoBehaviour {
     }
     
     // mark completed
+    
     Item[] resultInputs = result.inputs;
     // for each item in recipe, if equal 
     foreach (Item usedItem in result.inputs) {
@@ -85,7 +86,16 @@ internal class Crafter : MonoBehaviour {
         itemButtons[usedItem].Complete();
       }
     }
-    StartCoroutine(DelayCollect(result.result));
+    bool completed = true;
+    foreach (Recipe recipe in recipes) {
+      foreach (Item input in recipe.inputs) {
+        if (input == result.result) {
+          completed = false;
+        }
+      }
+    }
+    if (completed) StartCoroutine(DelayCollectCompleted(result.result));
+    else StartCoroutine(DelayCollect(result.result));
   }
   
   internal void AddInput(Item item) {
@@ -113,6 +123,23 @@ internal class Crafter : MonoBehaviour {
     }
     eventSystem.SetActive(true);
   }
+  
+  private IEnumerator DelayCollectCompleted(Item item) {
+    eventSystem.SetActive(false);
+    yield return new WaitForSeconds(1f/3f);
+    result.SetItem(item);
+    yield return new WaitForSeconds(1.5f);
+    Chara chara = Instantiate(this.chara, inventory);
+    chara.item = item;
+    chara.crafter = this;
+    itemButtons.Add(item, chara);
+    chara.Complete()
+    for (int i = 0; i < 4; i++) {
+      slots[i].OnClick();
+    }
+    eventSystem.SetActive(true);
+  }
+  
   
   // this comment memorializes
   // the forgone cupe strike

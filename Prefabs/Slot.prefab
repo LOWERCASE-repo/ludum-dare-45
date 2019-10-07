@@ -137,6 +137,7 @@ MonoBehaviour:
   animator: {fileID: 2991046122334017246}
   image: {fileID: 7237374161714111424}
   button: {fileID: 7237374161714111431}
+  border: {fileID: 8959993303877318495}
   text: {fileID: 7582041610904005348}
 --- !u!114 &7237374161714111424
 MonoBehaviour:

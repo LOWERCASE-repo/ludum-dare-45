@@ -19,6 +19,8 @@ internal class Icon : MonoBehaviour {
   [SerializeField]
   protected Button button;
   [SerializeField]
+  protected RawImage border;
+  [SerializeField]
   private TextMeshProUGUI text;
   
   internal virtual void SetItem(Item item) {

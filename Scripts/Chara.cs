@@ -8,7 +8,7 @@ internal class Chara : Icon {
   
   internal void Complete() {
     button.interactable = false;
-    image.color = new Color(0, 0, 0);
+    border.color = new Color(255, 215, 0);
   }
   
   private void Start() {

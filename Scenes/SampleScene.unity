@@ -1376,6 +1376,7 @@ MonoBehaviour:
   animator: {fileID: 561471606}
   image: {fileID: 335579917}
   button: {fileID: 0}
+  border: {fileID: 0}
   text: {fileID: 1795040013}
 --- !u!224 &654102866 stripped
 RectTransform:
@@ -2121,6 +2122,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121956867249866186, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121956867249866186, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121956867249866186, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121956867249866186, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805240487914877891, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805240487914877891, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805240487914877891, guid: 954fb6858eb57ad4ebd75062d969595a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954fb6858eb57ad4ebd75062d969595a, type: 3}
