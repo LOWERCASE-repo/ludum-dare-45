@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebcccb66e1b3cb4f82555de1f7c841f, type: 3}
-  m_Name: LARPer
+  m_Name: Reposter
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 2d31970cd2a760d4a8ea09963e45ff0e, type: 3}
+  sprite: {fileID: 21300000, guid: 970a433eb6f56c14ea0c5cf7d46a6e59, type: 3}
   flavour: 

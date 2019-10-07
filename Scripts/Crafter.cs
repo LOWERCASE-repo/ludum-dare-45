@@ -72,20 +72,24 @@ internal class Crafter : MonoBehaviour {
     // mark completed
     
     Item[] resultInputs = result.inputs;
+    
+    // TODO fix gold frame for multiple recipes, jst check whole inv
+    
     // for each item in recipe, if equal 
-    foreach (Item usedItem in result.inputs) {
+    foreach(KeyValuePair<Item, Chara> button in itemButtons) {
       bool completed = true;
       foreach (Recipe recipe in recipes) {
         foreach (Item input in recipe.inputs) {
-          if (input == usedItem) {
+          if (input == button.Key) {
             completed = false;
           }
         }
       }
       if (completed == true) {
-        itemButtons[usedItem].Complete();
+        itemButtons[button.Key].Complete();
       }
     }
+    
     bool resultCompleted = true;
     foreach (Recipe recipe in recipes) {
       foreach (Item input in recipe.inputs) {
@@ -99,6 +103,8 @@ internal class Crafter : MonoBehaviour {
     } else {
       StartCoroutine(DelayCollect(result.result));
     }
+    
+    
   }
   
   internal void AddInput(Item item) {

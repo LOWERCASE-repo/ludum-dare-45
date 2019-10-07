@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4042bdffaf8d5b4a84338385924b1dc, type: 3}
+  m_Name: Reposter 1
+  m_EditorClassIdentifier: 
+  inputs:
+  - {fileID: 11400000, guid: 1f657f26cd0f8a54bad28a19a76bcd50, type: 2}
+  - {fileID: 11400000, guid: ee212266fa6fabd42abfa8398d8e7c17, type: 2}
+  result: {fileID: 11400000, guid: 0b15798376835d948960e5eadf845f04, type: 2}
