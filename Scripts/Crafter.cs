@@ -86,15 +86,15 @@ internal class Crafter : MonoBehaviour {
         itemButtons[usedItem].Complete();
       }
     }
-    bool completed = true;
+    bool resultCompleted = true;
     foreach (Recipe recipe in recipes) {
       foreach (Item input in recipe.inputs) {
         if (input == result.result) {
-          completed = false;
+          resultCompleted = false;
         }
       }
     }
-    if (completed) StartCoroutine(DelayCollectCompleted(result.result));
+    if (resultCompleted) StartCoroutine(DelayCollectCompleted(result.result));
     else StartCoroutine(DelayCollect(result.result));
   }
   
@@ -133,7 +133,7 @@ internal class Crafter : MonoBehaviour {
     chara.item = item;
     chara.crafter = this;
     itemButtons.Add(item, chara);
-    chara.Complete()
+    chara.Complete();
     for (int i = 0; i < 4; i++) {
       slots[i].OnClick();
     }
