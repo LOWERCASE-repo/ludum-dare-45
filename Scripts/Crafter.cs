@@ -24,6 +24,12 @@ internal class Crafter : MonoBehaviour {
   private Color complete;
   private List<Recipe> recipes;
   
+  [SerializeField]
+  private TutorialText tutText;
+  [SerializeField]
+  private GoldPopup gold;
+  private bool golded;
+  
   private bool CompareContents<T>(IEnumerable<T> list1, IEnumerable<T> list2) {
     var dict = new Dictionary<T, int>();
     foreach (T item in list1) {
@@ -62,6 +68,7 @@ internal class Crafter : MonoBehaviour {
     
     if (result == null) return;
     
+    tutText.Fade();
     // remove dupe recipes
     for (int i = recipes.Count - 1; i >= 0; i--) {
       if (result.result == recipes[i].result) {
@@ -72,8 +79,6 @@ internal class Crafter : MonoBehaviour {
     // mark completed
     
     Item[] resultInputs = result.inputs;
-    
-    // TODO fix gold frame for multiple recipes, jst check whole inv
     
     // for each item in recipe, if equal 
     foreach(KeyValuePair<Item, Chara> button in itemButtons) {
@@ -87,6 +92,10 @@ internal class Crafter : MonoBehaviour {
       }
       if (completed == true) {
         itemButtons[button.Key].Complete();
+        if (!golded) {
+          gold.Activate();
+        }
+        golded = true;
       }
     }
     
@@ -146,6 +155,10 @@ internal class Crafter : MonoBehaviour {
       slots[i].Clear();
     }
     eventSystem.SetActive(true);
+    if (!golded) {
+      gold.Activate();
+    }
+    golded = true;
     CheckWin();
   }
   
