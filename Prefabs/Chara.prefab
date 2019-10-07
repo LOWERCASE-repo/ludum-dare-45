@@ -58,6 +58,7 @@ MonoBehaviour:
   crafter: {fileID: 0}
   animator: {fileID: 6090069367930887486}
   image: {fileID: 1121956867249866186}
+  button: {fileID: 4977634671716312548}
   text: {fileID: 3156934687648060179}
 --- !u!222 &3868497282527620166
 CanvasRenderer:

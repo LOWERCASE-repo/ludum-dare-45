@@ -4,6 +4,8 @@ using TMPro;
 
 internal class Icon : MonoBehaviour {
   
+  // TODO change border colour when completed
+  
   [SerializeField]
   internal Item item;
   [SerializeField]
@@ -13,7 +15,9 @@ internal class Icon : MonoBehaviour {
   [SerializeField]
   protected Animator animator;
   [SerializeField]
-  private Image image;
+  protected Image image;
+  [SerializeField]
+  protected Button button;
   [SerializeField]
   private TextMeshProUGUI text;
   

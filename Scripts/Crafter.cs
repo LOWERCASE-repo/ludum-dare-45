@@ -16,6 +16,12 @@ internal class Crafter : MonoBehaviour {
   [SerializeField]
   private GameObject eventSystem;
   
+  [SerializeField]
+  private Item[] originalItems;
+  [SerializeField]
+  private Chara[] originalCharas;
+  private Dictionary<Item, Chara> itemButtons;
+  private Color complete;
   private List<Recipe> recipes;
   
   private bool CompareContents<T>(IEnumerable<T> list1, IEnumerable<T> list2) {
@@ -41,25 +47,45 @@ internal class Crafter : MonoBehaviour {
     return dict.Values.All(count => count == 0);
   }
   
-  internal Item Craft() {
+  internal void Craft() {
     Item[] inputs = new Item[] {
       slots[0].item, slots[1].item, slots[2].item, slots[3].item
     };
-    Item result = null;
+    Recipe result = null;
+    
+    // find matching
     for (int i = 0; i < recipes.Count; i++) {
       if (CompareContents(inputs, recipes[i].inputs)) {
-        result = recipes[i].result;
+        result = recipes[i];
       }
     }
+    
+    if (result == null) return;
+    
+    // remove dupe recipes
     for (int i = recipes.Count - 1; i >= 0; i--) {
-      if (result == recipes[i].result) {
+      if (result == recipes[i]) {
         recipes.RemoveAt(i);
       }
     }
-    if (result != null) {
-      StartCoroutine(DelayCollect(result));
+    
+    // mark completed
+    Item[] resultInputs = result.inputs;
+    // for each item in recipe, if equal 
+    foreach (Item usedItem in result.inputs) {
+      bool completed = true;
+      foreach (Recipe recipe in recipes) {
+        foreach (Item input in recipe.inputs) {
+          if (input == result.result) {
+            completed = false;
+          }
+        }
+      }
+      if (completed == true) {
+        itemButtons[usedItem].Complete();
+      }
     }
-    return result;
+    StartCoroutine(DelayCollect(result.result));
   }
   
   internal void AddInput(Item item) {
@@ -81,13 +107,22 @@ internal class Crafter : MonoBehaviour {
     Chara chara = Instantiate(this.chara, inventory);
     chara.item = item;
     chara.crafter = this;
+    itemButtons.Add(item, chara);
     for (int i = 0; i < 4; i++) {
       slots[i].OnClick();
     }
     eventSystem.SetActive(true);
   }
   
+  // this comment memorializes
+  // the forgone cupe strike
+  // rip hopes n dreams
+  
   private void Start() {
     recipes = Resources.LoadAll("Recipes").Cast<Recipe>().ToList();
+    itemButtons = new Dictionary<Item, Chara>();
+    for (int i = 0; i < 4; i++) {
+      itemButtons.Add(originalItems[i], originalCharas[i]);
+    }
   }
 }
