@@ -103,8 +103,6 @@ internal class Crafter : MonoBehaviour {
     } else {
       StartCoroutine(DelayCollect(result.result));
     }
-    
-    
   }
   
   internal void AddInput(Item item) {
@@ -131,6 +129,7 @@ internal class Crafter : MonoBehaviour {
       slots[i].Clear();
     }
     eventSystem.SetActive(true);
+    CheckWin();
   }
   
   private IEnumerator DelayCollectCompleted(Item item) {
@@ -147,6 +146,11 @@ internal class Crafter : MonoBehaviour {
       slots[i].Clear();
     }
     eventSystem.SetActive(true);
+    CheckWin();
+  }
+  
+  private void CheckWin() {
+    Debug.Log(recipes.Count);
   }
   
   
