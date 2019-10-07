@@ -2,13 +2,16 @@ using UnityEngine;
 
 internal class Chara : Icon {
   
+  [SerializeField]
+  private Color color;
+  
   public void OnClick() {
     crafter.AddInput(item);
   }
   
   internal void Complete() {
-    button.interactable = false;
-    border.color = new Color(255, 215, 0);
+    button.enabled = false;
+    border.color = color;
   }
   
   private void Start() {

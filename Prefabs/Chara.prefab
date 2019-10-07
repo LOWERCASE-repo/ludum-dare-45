@@ -61,6 +61,7 @@ MonoBehaviour:
   button: {fileID: 4977634671716312548}
   border: {fileID: 5805240487914877891}
   text: {fileID: 3156934687648060179}
+  color: {r: 0.9372549, g: 0.84313726, b: 0.47843137, a: 1}
 --- !u!222 &3868497282527620166
 CanvasRenderer:
   m_ObjectHideFlags: 0

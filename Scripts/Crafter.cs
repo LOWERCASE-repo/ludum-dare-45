@@ -77,7 +77,7 @@ internal class Crafter : MonoBehaviour {
       bool completed = true;
       foreach (Recipe recipe in recipes) {
         foreach (Item input in recipe.inputs) {
-          if (input == result.result) {
+          if (input == usedItem) {
             completed = false;
           }
         }
